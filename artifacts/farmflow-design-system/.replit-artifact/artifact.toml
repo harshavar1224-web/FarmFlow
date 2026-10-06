@@ -1,0 +1,19 @@
+kind = "design-system"
+previewPath = "/farmflow-design-system/"
+title = "FarmFlow Design System"
+description = "A reusable visual system and component library for FarmFlow, a demand-led local food network connecting neighborhood consumers with farmers. It includes a complete light and dark theme, the FarmFlow brand mark, and a living style-guide preview."
+version = "1.0.0"
+id = "artifacts/farmflow-design-system"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/farmflow-design-system/" ]
+localPort = 23682
+
+[services.development]
+run = "pnpm --filter @workspace/farmflow-design-system run dev"
+
+[services.env]
+PORT = "23682"
+BASE_PATH = "/farmflow-design-system/"
