@@ -1,0 +1,3238 @@
+Absolutely. Since you already have the **FarmFlow MVP scaffolded in Replit** and have chosen **Supabase as the only backend**, the next prompt should tell Replit to **upgrade the existing application into a complete, production-style, hackathon-winning platform** rather than rebuilding everything from scratch.
+
+Below is the **master implementation prompt**. It is intentionally detailed so Replit Agent has clear requirements for architecture, UI, database, security, AI, marketplace, logistics, analytics, and the final demo.
+
+---
+
+# 🚀 FARMFLOW — COMPLETE MASTER IMPLEMENTATION PROMPT
+
+**Copy the entire prompt below into Replit Agent.**
+
+```text
+===============================================================
+FARMFLOW — PRODUCTION-READY HACKATHON APPLICATION
+===============================================================
+
+PROJECT NAME:
+FarmFlow
+
+TAGLINE:
+"Know the demand. Plan the harvest. Sell fresh. Waste less."
+
+CORE STATEMENT:
+"Don't harvest first and find buyers later.
+Know the demand first, then harvest."
+
+===============================================================
+0. IMPORTANT — EXISTING PROJECT
+===============================================================
+
+This is an EXISTING FarmFlow application that has already been
+scaffolded in Replit.
+
+DO NOT throw away the existing working implementation.
+
+First:
+
+1. Inspect the complete existing repository.
+2. Understand the current architecture.
+3. Identify the existing Supabase integration.
+4. Identify existing routes/components/services.
+5. Identify existing database migration files.
+6. Identify what is already implemented.
+7. Preserve working functionality.
+8. Upgrade and extend the application systematically.
+
+The current MVP already includes some of:
+
+- responsive marketplace
+- consumer signup
+- farmer signup
+- farmer listings
+- inventory management
+- preorder flow
+- inventory-safe reservations
+- order tracking
+- farmer dashboard
+- explainable harvest forecast
+- order status management
+- cancellation and stock release
+- Supabase integration
+- production build
+
+DO NOT rebuild working functionality unnecessarily.
+
+The goal now is to evolve the MVP into a polished,
+production-style, premium hackathon application.
+
+===============================================================
+1. NON-NEGOTIABLE BACKEND REQUIREMENT
+===============================================================
+
+USE SUPABASE ONLY AS THE BACKEND.
+
+DO NOT use Replit PostgreSQL.
+
+DO NOT create a second database.
+
+DO NOT migrate the project to another backend.
+
+Supabase must provide:
+
+- PostgreSQL
+- Authentication
+- Row Level Security
+- Storage
+- Realtime
+- Database functions
+- Database triggers
+- Edge Functions where required
+
+Replit is responsible for:
+
+- frontend development
+- application runtime
+- deployment
+- environment variables
+- development environment
+
+Architecture:
+
+                    FARMFLOW
+                       |
+                       ▼
+             React + TypeScript
+                       |
+                       ▼
+                    REPLIT
+                       |
+                       ▼
+               SUPABASE CLIENT
+                       |
+        ┌──────────────┼──────────────┐
+        ▼              ▼              ▼
+      AUTH         POSTGRESQL       STORAGE
+                       |
+                      RLS
+                       |
+        ┌──────────────┼──────────────┐
+        ▼              ▼              ▼
+     REALTIME      DB FUNCTIONS    EDGE FUNCTIONS
+                                      |
+                         ┌────────────┼────────────┐
+                         ▼            ▼            ▼
+                       AI         PAYMENTS       MAPS
+                    Forecast      Razorpay      Mappls
+                   
+===============================================================
+2. PRIMARY PRODUCT VISION
+===============================================================
+
+FarmFlow is NOT simply an online marketplace.
+
+It is a DEMAND-DRIVEN LOCAL FOOD NETWORK.
+
+The central innovation is:
+
+CONSUMER DEMAND
+        ↓
+PRE-ORDERS
+        ↓
+DEMAND ANALYSIS
+        ↓
+HARVEST FORECAST
+        ↓
+FARMER HARVEST PLAN
+        ↓
+FRESH LOCAL SUPPLY
+        ↓
+SMART ORDER GROUPING
+        ↓
+LOCAL DELIVERY
+        ↓
+CONSUMER
+        ↓
+TRANSPARENT FARMER EARNINGS
+        ↓
+SURPLUS REDUCTION
+
+The product must communicate this idea throughout the UI.
+
+===============================================================
+3. CORE HACKATHON MESSAGE
+===============================================================
+
+When a judge asks:
+
+"What is innovative about FarmFlow?"
+
+The application and presentation should communicate:
+
+"Most marketplaces help farmers sell what they have already
+produced.
+
+FarmFlow goes one step earlier.
+
+We analyze local demand and pre-orders to help farmers decide
+what and how much to harvest before surplus happens."
+
+Core phrase:
+
+"Demand before harvest."
+
+Secondary phrase:
+
+"Synchronizing local food supply with local demand."
+
+===============================================================
+4. TECHNOLOGY STACK
+===============================================================
+
+FRONTEND:
+
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- shadcn/ui
+- Framer Motion
+- React Router
+- TanStack Query
+- React Hook Form
+- Zod
+- Lucide React
+
+BACKEND:
+
+Supabase ONLY.
+
+DATABASE:
+
+Supabase PostgreSQL.
+
+AUTH:
+
+Supabase Auth.
+
+STORAGE:
+
+Supabase Storage.
+
+REALTIME:
+
+Supabase Realtime.
+
+SERVER-SIDE LOGIC:
+
+Supabase Edge Functions
+and secure PostgreSQL functions.
+
+OPTIONAL EXTERNAL SERVICES:
+
+- Razorpay
+- Mappls
+- Google Maps if Mappls is unavailable
+- Resend/email provider
+- browser speech recognition
+- AI provider if configured
+
+Do not make external services mandatory for the core MVP.
+
+===============================================================
+5. PREMIUM DESIGN DIRECTION
+===============================================================
+
+The UI must look like a serious premium startup product.
+
+DO NOT make it look like:
+
+- a college CRUD project
+- generic Bootstrap
+- generic admin dashboard
+- basic e-commerce template
+- copied Amazon UI
+- overly colorful agricultural website
+
+Design direction:
+
+"Luxury AgriTech + Premium Marketplace + Modern SaaS"
+
+Visual personality:
+
+- sophisticated
+- calm
+- premium
+- natural
+- trustworthy
+- modern
+- spacious
+- elegant
+- data-driven
+
+Use a refined visual system.
+
+Primary palette:
+
+Deep forest green
+Emerald
+Warm ivory
+Off-white
+Charcoal
+Muted gold accent
+
+Use colors carefully.
+
+Avoid excessive bright green.
+
+Use green primarily for:
+
+- primary actions
+- positive states
+- verified states
+- agricultural indicators
+
+Use gold sparingly for premium highlights.
+
+Typography:
+
+Use a modern premium sans-serif.
+
+Recommended:
+
+Inter
+Manrope
+Plus Jakarta Sans
+
+Use:
+
+- large confident headings
+- strong hierarchy
+- comfortable line spacing
+- compact dashboard typography
+
+Cards:
+
+- 16–24px border radius
+- subtle border
+- subtle shadow
+- glass effects only where useful
+- generous whitespace
+
+Buttons:
+
+- refined
+- rounded
+- clear hover states
+- subtle motion
+
+Animations:
+
+Use Framer Motion.
+
+Animations should be:
+
+- subtle
+- fast
+- purposeful
+
+Never over-animate.
+
+===============================================================
+6. PREMIUM LANDING PAGE
+===============================================================
+
+Create an exceptional landing page.
+
+Hero:
+
+---------------------------------------------------------------
+
+FARMFLOW
+
+Know the demand.
+Plan the harvest.
+Sell fresh.
+Waste less.
+
+"Connect directly with local farmers and discover fresh food
+while helping producers harvest with confidence."
+
+Buttons:
+
+[ Explore Local Produce ]
+[ Become a Farmer ]
+
+---------------------------------------------------------------
+
+Hero visualization:
+
+Create an animated supply-demand flow:
+
+Consumer Demand
+        ↓
+AI Demand Intelligence
+        ↓
+Harvest Recommendation
+        ↓
+Local Farmer
+        ↓
+Fresh Produce
+        ↓
+Smart Delivery
+        ↓
+Consumer
+
+The animation should feel premium and subtle.
+
+===============================================================
+7. LANDING PAGE SECTIONS
+===============================================================
+
+Create:
+
+1. Hero
+2. How FarmFlow works
+3. Demand-before-harvest explanation
+4. Marketplace preview
+5. Farmer intelligence preview
+6. Pre-order explanation
+7. Smart delivery
+8. Traceability
+9. Transparent farmer earnings
+10. Surplus reduction
+11. Impact metrics
+12. Farmer stories
+13. Consumer testimonials
+14. CTA
+15. Footer
+
+Use scroll animations.
+
+Use high-quality agricultural imagery only if available
+through safe configured sources.
+
+Do not depend on external images for core functionality.
+
+===============================================================
+8. GLOBAL NAVIGATION
+===============================================================
+
+Desktop navbar:
+
+FarmFlow logo
+Marketplace
+How it works
+Farmers
+Impact
+About
+
+Right:
+
+Location
+Notifications
+Profile
+
+For authenticated users:
+
+Dashboard
+Orders
+Profile
+
+For farmers:
+
+Farmer Dashboard
+
+For admins:
+
+Admin
+
+Mobile:
+
+Use a premium mobile navigation.
+
+Consumer:
+
+Home
+Explore
+Orders
+Favorites
+Profile
+
+Farmer:
+
+Dashboard
+Products
+Orders
+Forecast
+Profile
+
+===============================================================
+9. AUTHENTICATION
+===============================================================
+
+Use Supabase Auth.
+
+Support:
+
+- signup
+- login
+- logout
+- password reset
+- email verification
+- session persistence
+
+Registration:
+
+Consumer
+Farmer
+
+Admin cannot be publicly registered.
+
+Admin role must be securely assigned.
+
+Never trust role information coming from the browser.
+
+===============================================================
+10. ONBOARDING
+===============================================================
+
+CONSUMER ONBOARDING:
+
+- full name
+- phone
+- city/locality
+- location
+- preferred language
+- food preferences
+
+FARMER ONBOARDING:
+
+- name
+- phone
+- farm name
+- farm location
+- farm description
+- categories
+- farm image
+- verification information
+- payment information placeholder
+- preferred language
+
+Create a multi-step onboarding UI.
+
+Show progress:
+
+1
+Profile
+
+2
+Location
+
+3
+Preferences
+
+4
+Complete
+
+===============================================================
+11. CONSUMER MARKETPLACE
+===============================================================
+
+Create a premium marketplace.
+
+Top:
+
+"Fresh from farms near you."
+
+Show:
+
+- location
+- search
+- categories
+- nearby farms
+- harvesting today
+- harvesting tomorrow
+- high demand
+- recommended products
+
+Categories:
+
+Vegetables
+Fruits
+Greens
+Grains
+Dairy
+Eggs
+Homemade Foods
+Other Local Products
+
+===============================================================
+12. PRODUCT CARD
+===============================================================
+
+Every product card should show:
+
+Product image
+
+Product name
+
+Price
+
+Unit
+
+Farm name
+
+Distance
+
+Harvest date
+
+Availability
+
+Rating
+
+Freshness badge
+
+Possible badges:
+
+HARVESTING TODAY
+HARVESTING TOMORROW
+PRE-ORDER
+HIGH DEMAND
+LIMITED
+FRESH
+
+Use premium card interactions.
+
+Hover:
+
+- image zoom
+- subtle elevation
+- quick action
+
+Mobile:
+
+- compact
+- touch friendly
+
+===============================================================
+13. PRODUCT DETAILS
+===============================================================
+
+Create an exceptional product detail page.
+
+Include:
+
+Large product image
+
+Product name
+
+Price
+
+Unit
+
+Available quantity
+
+Farmer
+
+Farm
+
+Distance
+
+Harvest date
+
+Expected delivery
+
+Rating
+
+Description
+
+Freshness
+
+Pre-order availability
+
+Quantity selector
+
+[ Add to cart ]
+
+[ Pre-order ]
+
+Traceability preview.
+
+===============================================================
+14. FARM PROFILE
+===============================================================
+
+Create a premium farmer profile.
+
+Show:
+
+Farm name
+Farmer name
+Verification badge
+Farm location
+Distance
+Farm description
+Products
+Rating
+Completed orders
+Years/experience if provided
+Farming practices if provided
+
+Section:
+
+"Meet your farmer"
+
+Do not expose sensitive private information.
+
+Do not expose exact private home coordinates.
+
+===============================================================
+15. PRE-ORDER SYSTEM
+===============================================================
+
+Pre-ordering is a CORE feature.
+
+Consumer should see:
+
+TOMATOES
+
+Predicted local demand:
+82 kg
+
+Already reserved:
+61 kg
+
+Available:
+21 kg
+
+Allow quantity:
+
+1kg
+2kg
+5kg
+10kg
+custom
+
+When preorder occurs:
+
+- create order
+- reserve inventory
+- update demand
+- update farmer dashboard
+- update forecast
+- create notification
+
+Prevent overselling.
+
+Use atomic database operations.
+
+===============================================================
+16. INVENTORY SYSTEM
+===============================================================
+
+Inventory fields:
+
+total_quantity
+reserved_quantity
+available_quantity
+sold_quantity
+waste_quantity
+harvested_quantity
+
+Formula:
+
+available =
+total
+-
+reserved
+-
+sold
+
+Never allow negative inventory.
+
+Reservation must happen atomically.
+
+Cancellation must release reserved inventory.
+
+===============================================================
+17. SHOPPING CART
+===============================================================
+
+Real cart.
+
+Features:
+
+- add
+- remove
+- increase
+- decrease
+- quantity validation
+- subtotal
+- delivery fee
+- total
+- delivery estimate
+
+Group products by farm.
+
+Show:
+
+Farm A
+
+items
+
+Farm B
+
+items
+
+Do not silently combine incompatible fulfillment windows.
+
+===============================================================
+18. CHECKOUT
+===============================================================
+
+Checkout steps:
+
+1. Address
+2. Delivery slot
+3. Order review
+4. Payment
+5. Confirmation
+
+Payment:
+
+If Razorpay credentials are configured:
+
+Use Razorpay through secure Edge Functions.
+
+If not configured:
+
+Provide clearly labelled:
+
+"Demo Payment"
+
+Never pretend demo payments are real.
+
+Never expose secret payment credentials.
+
+===============================================================
+19. ORDER STATE MACHINE
+===============================================================
+
+Use:
+
+PENDING
+CONFIRMED
+PROCESSING
+READY_FOR_PICKUP
+OUT_FOR_DELIVERY
+DELIVERED
+COMPLETED
+CANCELLED
+PAYMENT_FAILED
+REFUND_PENDING
+REFUNDED
+
+Normal:
+
+PENDING
+→ CONFIRMED
+→ PROCESSING
+→ READY_FOR_PICKUP
+→ OUT_FOR_DELIVERY
+→ DELIVERED
+→ COMPLETED
+
+Failure:
+
+PENDING
+→ CANCELLED
+
+PENDING
+→ PAYMENT_FAILED
+
+CONFIRMED
+→ REFUND_PENDING
+→ REFUNDED
+
+Do not allow arbitrary status transitions.
+
+Validate transitions server-side.
+
+Store every status transition in order_status_history.
+
+===============================================================
+20. ORDER TRACKING
+===============================================================
+
+Create a beautiful timeline.
+
+Example:
+
+✓ Order placed
+✓ Farmer confirmed
+✓ Preparing
+✓ Ready for pickup
+● Out for delivery
+○ Delivered
+
+Display:
+
+Order ID
+Farmer
+Items
+Quantity
+Total
+Delivery ETA
+Status
+Payment
+
+Use Realtime where appropriate.
+
+===============================================================
+21. FARMER DASHBOARD
+===============================================================
+
+Create a premium farmer command center.
+
+Top metrics:
+
+Today's revenue
+Orders
+Pending orders
+Upcoming harvest
+Predicted demand
+Potential surplus
+
+Hero card:
+
+"Tomorrow's Harvest Intelligence"
+
+Example:
+
+Tomatoes
+
+Demand:
+82 kg
+
+Pre-orders:
+61 kg
+
+Recommended harvest:
+86 kg
+
+Confidence:
+89%
+
+Potential surplus:
+4 kg
+
+[ View Harvest Plan ]
+
+===============================================================
+22. FARMER PRODUCT MANAGEMENT
+===============================================================
+
+Farmer can:
+
+Create
+Edit
+Pause
+Archive
+Delete
+
+Fields:
+
+Product name
+Category
+Description
+Price
+Unit
+Quantity
+Harvest date
+Delivery availability
+Minimum order
+Images
+
+Product states:
+
+DRAFT
+ACTIVE
+PAUSED
+OUT_OF_STOCK
+ARCHIVED
+
+===============================================================
+23. FARMER INVENTORY
+===============================================================
+
+Inventory dashboard:
+
+Total stock
+Reserved
+Available
+Sold
+Wasted
+
+Create inventory history.
+
+Show:
+
+Today's movement
+
+Received
+Reserved
+Sold
+Adjusted
+Wasted
+
+===============================================================
+24. FARMFLOW HARVEST INTELLIGENCE
+===============================================================
+
+THIS IS THE MAIN DIFFERENTIATOR.
+
+Do not label it simply:
+
+"AI"
+
+Call it:
+
+"FarmFlow Harvest Intelligence"
+
+It must provide:
+
+Predicted demand
+Confidence
+Recommended harvest
+Potential surplus
+Demand trend
+Explanation
+
+Example:
+
+TOMATO
+
+Predicted demand:
+82 kg
+
+Confirmed pre-orders:
+61 kg
+
+Recommended harvest:
+86 kg
+
+Confidence:
+89%
+
+Potential surplus:
+4 kg
+
+WHY?
+
++18% recent order growth
++11% preorder demand
++8% weekend trend
++5% planning buffer
+
+Use transparent logic.
+
+Do not fake AI.
+
+===============================================================
+25. DEMAND FORECASTING ENGINE
+===============================================================
+
+Version 1:
+
+Use deterministic forecasting.
+
+Inputs:
+
+- recent fulfilled orders
+- current preorders
+- previous 7-day demand
+- previous 30-day demand
+- day of week
+- seasonal factor
+- local demand
+- inventory
+- pre-order velocity
+
+Use weighted calculation.
+
+Example:
+
+base demand
++
+recent trend
++
+preorders
++
+day adjustment
++
+seasonal adjustment
++
+5% planning buffer
+
+Store result in:
+
+demand_forecasts
+
+Fields:
+
+product_id
+farmer_id
+forecast_date
+predicted_demand
+confidence
+recommended_harvest
+potential_surplus
+demand_trend
+explanation
+created_at
+
+===============================================================
+26. FORECAST CONFIDENCE
+===============================================================
+
+Confidence must be explainable.
+
+Factors:
+
+Data volume
+Order consistency
+Pre-order strength
+Trend stability
+
+Example:
+
+Confidence:
+89%
+
+Explanation:
+
+"Confidence is high because the product has 28 completed
+orders and strong preorder activity over the last 7 days."
+
+Do not claim scientific accuracy.
+
+===============================================================
+27. HARVEST PLANNER
+===============================================================
+
+Create:
+
+"Tomorrow's Harvest"
+
+Table:
+
+Product
+Current stock
+Predicted demand
+Preorders
+Recommended harvest
+Potential surplus
+
+Actions:
+
+[ Accept Recommendation ]
+
+[ Adjust ]
+
+When accepted:
+
+Create harvest plan.
+
+Store:
+
+planned_quantity
+forecast_quantity
+actual_quantity
+status
+
+===============================================================
+28. SURPLUS DETECTION
+===============================================================
+
+If supply exceeds expected demand:
+
+Show:
+
+SURPLUS RISK
+
+Example:
+
+Potential surplus:
+18 kg
+
+Actions:
+
+Offer discount
+Notify nearby customers
+Offer restaurant bulk order
+Create rescue listing
+Donate
+
+===============================================================
+29. SURPLUS RESCUE
+===============================================================
+
+Create a surplus marketplace.
+
+Example:
+
+30kg tomatoes
+
+Normal price:
+₹35/kg
+
+Rescue price:
+₹25/kg
+
+Options:
+
+Consumer
+Restaurant
+Organization/NGO
+
+Track:
+
+surplus_quantity
+rescued_quantity
+donated_quantity
+wasted_quantity
+
+===============================================================
+30. SMART LOCAL DELIVERY
+===============================================================
+
+Create delivery clustering.
+
+Group nearby orders.
+
+Example:
+
+14 orders
+3 farmers
+1 local zone
+
+Create:
+
+Delivery Cluster #FF-001
+
+Display:
+
+Orders
+Farmers
+Distance
+Estimated route
+Delivery window
+Status
+
+Start with geographic distance clustering.
+
+Keep algorithm modular.
+
+===============================================================
+31. MAP
+===============================================================
+
+Use Mappls if API credentials are available.
+
+Otherwise create map service abstraction.
+
+Map features:
+
+- nearby farms
+- nearby products
+- consumer location
+- delivery clusters
+- routes
+- demand areas
+
+Privacy:
+
+Never show exact farmer private addresses publicly.
+
+Use approximate public farm locations.
+
+===============================================================
+32. FARM-TO-TABLE TRACEABILITY
+===============================================================
+
+Every completed order should show:
+
+Farm
+
+↓
+
+Harvested
+
+↓
+
+Packed
+
+↓
+
+Picked up
+
+↓
+
+Out for delivery
+
+↓
+
+Delivered
+
+Create visual timeline.
+
+Example:
+
+GREEN VALLEY FARM
+
+Harvested:
+06 Oct 2026
+06:20 AM
+
+Packed:
+08:15 AM
+
+Picked up:
+09:30 AM
+
+Delivered:
+11:00 AM
+
+===============================================================
+33. TRANSPARENT FARMER EARNINGS
+===============================================================
+
+Show transparent breakdown.
+
+Example:
+
+Customer paid:
+₹100
+
+Farmer:
+₹72
+
+Delivery:
+₹15
+
+Packaging:
+₹8
+
+Platform:
+₹5
+
+Clearly label these as actual calculated transaction values.
+
+Do not invent industry comparisons.
+
+===============================================================
+34. REVIEWS
+===============================================================
+
+Allow reviews after COMPLETED order only.
+
+Review:
+
+Product
+Farmer
+Delivery
+
+1–5 stars
+Optional text
+
+Prevent duplicate reviews.
+
+===============================================================
+35. FAVORITES
+===============================================================
+
+Consumer can favorite:
+
+Products
+Farmers
+
+Create favorites page.
+
+===============================================================
+36. NOTIFICATIONS
+===============================================================
+
+Create notification center.
+
+Consumer:
+
+Order confirmed
+Order ready
+Out for delivery
+Delivered
+New harvest
+Price changes
+
+Farmer:
+
+New order
+Preorder
+Demand increase
+Surplus warning
+Payment received
+Harvest recommendation
+
+Admin:
+
+Verification request
+Demand anomaly
+Cancellation issue
+
+Use Supabase Realtime where appropriate.
+
+===============================================================
+37. ADMIN COMMAND CENTER
+===============================================================
+
+Create an extremely polished admin dashboard.
+
+Metrics:
+
+Total farmers
+Verified farmers
+Consumers
+Orders
+Revenue
+GMV
+Food rescued
+Food waste avoided
+Average order value
+Delivery success rate
+
+Charts:
+
+Orders
+Demand
+Supply
+Surplus
+Farmer earnings
+Categories
+Delivery
+
+===============================================================
+38. ADMIN FARMER VERIFICATION
+===============================================================
+
+Admin can:
+
+Review
+Approve
+Reject
+Suspend
+
+Farmer status:
+
+PENDING
+VERIFIED
+REJECTED
+SUSPENDED
+
+Only VERIFIED farmers should be publicly promoted.
+
+===============================================================
+39. DEMAND MAP
+===============================================================
+
+Admin demand map.
+
+Zones:
+
+HIGH DEMAND
+MEDIUM DEMAND
+BALANCED
+LOW DEMAND
+
+Use actual order and forecast data.
+
+===============================================================
+40. IMPACT DASHBOARD
+===============================================================
+
+Create a premium impact page.
+
+Metrics:
+
+Farmers supported
+Consumers served
+Orders fulfilled
+Farmer earnings
+Food rescued
+Food waste avoided
+Local delivery distance
+Average farm distance
+Repeat customers
+
+Use real calculated values.
+
+If demo seed data is used:
+
+Clearly mark:
+
+"Demo environment"
+
+===============================================================
+41. DATABASE ARCHITECTURE
+===============================================================
+
+Use PostgreSQL via Supabase.
+
+Tables:
+
+profiles
+
+farmer_profiles
+
+consumer_profiles
+
+farms
+
+categories
+
+products
+
+product_images
+
+inventory
+
+inventory_movements
+
+orders
+
+order_items
+
+order_status_history
+
+payments
+
+addresses
+
+favorites
+
+reviews
+
+demand_forecasts
+
+harvest_plans
+
+surplus_listings
+
+delivery_clusters
+
+delivery_cluster_orders
+
+notifications
+
+farmer_verifications
+
+impact_metrics
+
+audit_logs
+
+===============================================================
+42. DATABASE REQUIREMENTS
+===============================================================
+
+Use:
+
+UUID primary keys.
+
+Foreign keys.
+
+Indexes.
+
+Unique constraints.
+
+Check constraints.
+
+created_at.
+
+updated_at.
+
+Triggers.
+
+Database functions.
+
+Transactions where appropriate.
+
+Use database-safe operations.
+
+===============================================================
+43. ROW LEVEL SECURITY
+===============================================================
+
+Enable RLS on every sensitive table.
+
+CONSUMER:
+
+Can view public products.
+
+Can view verified farms.
+
+Can manage own profile.
+
+Can manage own addresses.
+
+Can create/read own orders.
+
+Can create reviews only for completed orders.
+
+FARMER:
+
+Can manage own farm.
+
+Can manage own products.
+
+Can manage own inventory.
+
+Can view own orders.
+
+Can view own forecasts.
+
+Can manage own harvest plans.
+
+Cannot access another farmer's private information.
+
+ADMIN:
+
+Can manage platform operations through secure policies/functions.
+
+Never rely solely on frontend authorization.
+
+===============================================================
+44. STORAGE
+===============================================================
+
+Supabase Storage buckets:
+
+avatars
+farm-images
+product-images
+verification-documents
+
+Rules:
+
+Public product images can be public.
+
+Verification documents must remain private.
+
+Validate:
+
+file type
+file size
+ownership
+
+===============================================================
+45. REALTIME
+===============================================================
+
+Use Supabase Realtime for:
+
+Order status
+Notifications
+Relevant inventory changes
+Delivery status
+
+Avoid unnecessary global subscriptions.
+
+===============================================================
+46. SEARCH AND FILTERS
+===============================================================
+
+Marketplace search:
+
+Product
+Category
+Farmer
+Location
+
+Filters:
+
+Price
+Distance
+Rating
+Harvest date
+Availability
+Category
+
+Sort:
+
+Nearest
+Freshest
+Price
+Rating
+Popular
+
+===============================================================
+47. LOCATION
+===============================================================
+
+Support:
+
+city
+locality
+latitude
+longitude
+
+Consumer:
+
+exact delivery address private.
+
+Farmer:
+
+public approximate farm location.
+
+===============================================================
+48. TELUGU SUPPORT
+===============================================================
+
+Prepare complete i18n system.
+
+Languages:
+
+English
+Telugu
+
+Do not hardcode translation strings inside components.
+
+Create:
+
+locales/en
+locales/te
+
+Language switcher.
+
+===============================================================
+49. VOICE FARMER LISTING
+===============================================================
+
+Optional advanced feature.
+
+Allow farmer voice input.
+
+Example:
+
+"నా దగ్గర రేపు 50 కిలోల టమాటాలు అందుబాటులో ఉంటాయి"
+
+Convert to:
+
+Product:
+Tomatoes
+
+Quantity:
+50kg
+
+Availability:
+Tomorrow
+
+Use browser speech recognition where supported.
+
+Gracefully disable if unsupported.
+
+Do not make this required for core functionality.
+
+===============================================================
+50. PWA
+===============================================================
+
+Make FarmFlow installable.
+
+Implement:
+
+manifest
+service worker
+icons
+mobile layout
+offline fallback
+
+The farmer experience should feel like a mobile application.
+
+===============================================================
+51. SECURITY
+===============================================================
+
+Critical.
+
+Never expose:
+
+SUPABASE_SERVICE_ROLE_KEY
+
+Never expose:
+
+payment secret keys
+
+Never put secret keys into frontend code.
+
+Use:
+
+VITE_SUPABASE_URL
+VITE_SUPABASE_ANON_KEY
+
+for client-side Supabase.
+
+Use secure server-side environment variables for secrets.
+
+Validate all input.
+
+Use Zod.
+
+Protect routes.
+
+Validate authorization server-side.
+
+===============================================================
+52. PAYMENT SECURITY
+===============================================================
+
+Payment flow:
+
+Frontend
+↓
+Supabase Edge Function
+↓
+Payment provider
+↓
+Verified callback/webhook
+↓
+Database update
+
+Do not trust payment success sent from frontend.
+
+===============================================================
+53. IDEMPOTENCY
+===============================================================
+
+Critical operations must be idempotent.
+
+Especially:
+
+Order creation
+Payment
+Reservation
+Cancellation
+Refund
+
+Repeated request must not:
+
+create duplicate order
+reserve stock twice
+charge twice
+
+===============================================================
+54. AUDIT LOG
+===============================================================
+
+Create audit logs for:
+
+Order state changes
+Inventory adjustments
+Payments
+Refunds
+Farmer verification
+Forecast generation
+Surplus creation
+Admin actions
+
+===============================================================
+55. ANALYTICS
+===============================================================
+
+Track:
+
+Product views
+Preorders
+Orders
+Conversion
+Quantity sold
+Surplus
+Forecast accuracy
+Repeat purchases
+
+Forecast accuracy:
+
+Compare:
+
+forecast
+vs
+actual demand
+
+Do not claim perfect prediction.
+
+===============================================================
+56. PERFORMANCE
+===============================================================
+
+Use:
+
+lazy loading
+pagination
+optimized queries
+database indexes
+image optimization
+TanStack Query caching
+
+Do not load entire tables into frontend.
+
+===============================================================
+57. RESPONSIVE DESIGN
+===============================================================
+
+Perfectly support:
+
+360px
+375px
+390px
+768px
+1024px
+1440px
+1920px
+
+Farmer mobile dashboard is especially important.
+
+===============================================================
+58. ACCESSIBILITY
+===============================================================
+
+Implement:
+
+semantic HTML
+keyboard navigation
+ARIA labels
+focus states
+accessible forms
+proper contrast
+screen reader friendly controls
+
+===============================================================
+59. ERROR STATES
+===============================================================
+
+Every major page must have:
+
+Loading
+Skeleton
+Empty
+Error
+Retry
+Success
+
+Never show:
+
+undefined
+null
+raw SQL error
+raw Supabase error
+
+to users.
+
+===============================================================
+60. DATABASE MIGRATIONS
+===============================================================
+
+Use Supabase migrations.
+
+Do NOT manually create production tables through UI.
+
+Create migration files.
+
+If existing migration:
+
+supabase/migrations/20261006000000_farmflow_mvp.sql
+
+already exists:
+
+inspect it first.
+
+Do not duplicate tables.
+
+Create subsequent migration files for new features.
+
+Example:
+
+20261006010000_demand_intelligence.sql
+
+20261006020000_surplus_rescue.sql
+
+20261006030000_delivery_clusters.sql
+
+etc.
+
+===============================================================
+61. DEMO DATA
+===============================================================
+
+Create realistic fictional seed data.
+
+Farmers:
+
+Green Valley Farms
+Lakshmi Organics
+Sri Sai Fresh Farms
+Sunrise Local Produce
+Nature Basket Farm
+
+Products:
+
+Tomatoes
+Onions
+Spinach
+Carrots
+Green Chilli
+Coriander
+Bananas
+Mangoes
+Eggs
+Homemade Pickles
+
+Create:
+
+10+ farmers
+50+ products
+50+ consumers
+100+ orders
+forecast records
+delivery clusters
+reviews
+notifications
+
+Mark seed data as DEMO.
+
+===============================================================
+62. DEMO ACCOUNTS
+===============================================================
+
+Create development-only demo accounts.
+
+Consumer:
+demo.consumer@farmflow.local
+
+Farmer:
+demo.farmer@farmflow.local
+
+Admin:
+demo.admin@farmflow.local
+
+Do not hardcode production passwords.
+
+Use a secure development seed process.
+
+===============================================================
+63. CODE ARCHITECTURE
+===============================================================
+
+Use:
+
+src/
+  components/
+  pages/
+  layouts/
+  features/
+  hooks/
+  services/
+  lib/
+  types/
+  schemas/
+  utils/
+  contexts/
+
+features:
+
+auth
+marketplace
+products
+farmers
+orders
+inventory
+demand
+harvest
+surplus
+delivery
+notifications
+admin
+analytics
+
+Create service abstractions:
+
+authService
+productService
+farmerService
+orderService
+inventoryService
+demandService
+harvestService
+surplusService
+deliveryService
+paymentService
+notificationService
+analyticsService
+
+Do not put all database queries directly inside components.
+
+===============================================================
+64. COMPONENT QUALITY
+===============================================================
+
+Avoid huge components.
+
+Break UI into reusable components.
+
+Examples:
+
+ProductCard
+FarmCard
+DemandCard
+ForecastCard
+HarvestPlanCard
+OrderTimeline
+OrderStatusBadge
+InventoryCard
+MetricCard
+RevenueChart
+DemandChart
+DeliveryClusterCard
+TraceabilityTimeline
+NotificationItem
+
+===============================================================
+65. CORE ROUTES
+===============================================================
+
+PUBLIC:
+
+/
+ /marketplace
+ /product/:id
+ /farm/:id
+ /farmers
+ /how-it-works
+ /impact
+ /about
+ /login
+ /register
+ /forgot-password
+
+CONSUMER:
+
+/consumer
+/consumer/marketplace
+/consumer/cart
+/consumer/checkout
+/consumer/orders
+/consumer/orders/:id
+/consumer/favorites
+/consumer/profile
+/consumer/notifications
+
+FARMER:
+
+/farmer
+/farmer/products
+/farmer/products/new
+/farmer/products/:id/edit
+/farmer/inventory
+/farmer/orders
+/farmer/orders/:id
+/farmer/forecast
+/farmer/harvest
+/farmer/surplus
+/farmer/earnings
+/farmer/profile
+/farmer/notifications
+
+ADMIN:
+
+/admin
+/admin/farmers
+/admin/farmers/:id
+/admin/products
+/admin/orders
+/admin/demand
+/admin/delivery
+/admin/surplus
+/admin/analytics
+/admin/impact
+/admin/audit
+
+===============================================================
+66. FARMER UX
+===============================================================
+
+The farmer interface should prioritize simplicity.
+
+Farmers should immediately understand:
+
+"What do I need to harvest?"
+
+Top card:
+
+TOMORROW
+
+Tomatoes
+82kg demand
+
+Recommended:
+86kg
+
+[Accept Plan]
+
+Then:
+
+Orders
+Inventory
+Earnings
+Surplus
+
+Avoid overly complicated enterprise screens.
+
+===============================================================
+67. CONSUMER UX
+===============================================================
+
+Consumer interface should prioritize:
+
+Freshness
+Trust
+Convenience
+Local connection
+
+Show:
+
+"3.2 km from you"
+
+"Harvested this morning"
+
+"Meet the farmer"
+
+"Pre-order for tomorrow"
+
+"Track your food"
+
+===============================================================
+68. PREMIUM MICRO-INTERACTIONS
+===============================================================
+
+Implement subtle:
+
+button hover
+card hover
+page transitions
+number counting
+progress animation
+order timeline animation
+success animation
+forecast generation animation
+loading shimmer
+
+Do not overuse animations.
+
+===============================================================
+69. FARMFLOW AI EXPERIENCE
+===============================================================
+
+When farmer opens Harvest Intelligence:
+
+Show a polished analysis state.
+
+Example:
+
+"Analyzing local demand..."
+
+Then:
+
+Demand analyzed
+✓ 7-day orders
+✓ Preorders
+✓ Current inventory
+✓ Seasonal trend
+
+Then reveal:
+
+82kg predicted demand.
+
+Make this a strong hackathon demo moment.
+
+===============================================================
+70. FORECAST EXPLANATION
+===============================================================
+
+Never just display:
+
+"AI predicts 82kg."
+
+Instead:
+
+"FarmFlow recommends 86kg because:
+
+61kg is already reserved,
+recent demand is 18% above average,
+weekend demand is stronger,
+and a 5% planning buffer is applied."
+
+This is explainable intelligence.
+
+===============================================================
+71. SURPLUS EXPERIENCE
+===============================================================
+
+If surplus risk occurs:
+
+Display:
+
+"Potential surplus detected."
+
+Example:
+
+18kg at risk.
+
+Then provide:
+
+[ Offer Discount ]
+[ Notify Nearby Buyers ]
+[ Bulk Sell ]
+[ Rescue ]
+
+Make this feel like a proactive intervention.
+
+===============================================================
+72. SMART DELIVERY UX
+===============================================================
+
+Admin/operator:
+
+Delivery Clusters
+
+Cluster #FF-001
+
+14 orders
+3 farms
+5.8km route
+Estimated 42 min
+
+Map visualization.
+
+Consumer:
+
+"Your order is part of Local Delivery Cluster #FF-001."
+
+===============================================================
+73. IMPACT CALCULATION
+===============================================================
+
+Calculate:
+
+Food rescued
+Food waste avoided
+Orders fulfilled
+Farmer earnings
+Local deliveries
+Average distance
+
+Do not hardcode impact values in production.
+
+===============================================================
+74. TESTING
+===============================================================
+
+Create tests for:
+
+Authentication
+Authorization
+Inventory reservation
+Inventory release
+Order creation
+Order cancellation
+Order state transitions
+Demand forecast
+Harvest recommendation
+Surplus detection
+Delivery clustering
+Review permissions
+
+Test critical database logic.
+
+===============================================================
+75. COMPLETE USER FLOW
+===============================================================
+
+This exact flow must work:
+
+CONSUMER:
+
+Register
+↓
+Login
+↓
+Location
+↓
+Marketplace
+↓
+Product
+↓
+Farm profile
+↓
+Pre-order
+↓
+Cart
+↓
+Checkout
+↓
+Payment
+↓
+Order created
+↓
+Track order
+↓
+Delivery
+↓
+Completed
+↓
+Review
+
+FARMER:
+
+Register
+↓
+Onboarding
+↓
+Farm verification
+↓
+Create product
+↓
+Add inventory
+↓
+Receive preorder
+↓
+Demand forecast updates
+↓
+Harvest recommendation
+↓
+Accept plan
+↓
+Process order
+↓
+Ready for pickup
+↓
+Delivery
+↓
+Completed
+↓
+Earnings updated
+
+ADMIN:
+
+Login
+↓
+Dashboard
+↓
+Verify farmer
+↓
+Monitor orders
+↓
+View demand
+↓
+View delivery clusters
+↓
+Monitor surplus
+↓
+View impact
+
+===============================================================
+76. DEMO STORY
+===============================================================
+
+The hackathon demo should be approximately:
+
+3–5 minutes.
+
+START:
+
+"Farmers often harvest first and then search for buyers."
+
+SHOW:
+
+Consumer sees tomatoes.
+
+Preorders 2kg.
+
+SWITCH:
+
+Farmer dashboard.
+
+New preorder appears.
+
+OPEN:
+
+FarmFlow Harvest Intelligence.
+
+Show:
+
+Predicted demand:
+82kg
+
+Recommended harvest:
+86kg
+
+Confidence:
+89%
+
+Explain:
+
+"Instead of guessing how much to harvest,
+FarmFlow uses actual local demand and preorders."
+
+Then:
+
+Accept harvest plan.
+
+Show:
+
+Surplus risk:
+4kg
+
+Show:
+
+Smart delivery cluster.
+
+Then:
+
+Consumer order tracking.
+
+Show:
+
+Farm → Harvest → Pack → Delivery → Consumer.
+
+Finish with:
+
+"FarmFlow doesn't just connect farmers and consumers.
+
+It synchronizes local supply with local demand."
+
+===============================================================
+77. HACKATHON WINNING DIFFERENTIATORS
+===============================================================
+
+The final product must clearly demonstrate:
+
+1. DEMAND BEFORE HARVEST
+
+2. PRE-ORDER DRIVEN SUPPLY
+
+3. EXPLAINABLE HARVEST INTELLIGENCE
+
+4. SURPLUS PREVENTION
+
+5. SMART LOCAL DELIVERY
+
+6. FARM-TO-TABLE TRACEABILITY
+
+7. TRANSPARENT FARMER EARNINGS
+
+8. REAL-TIME ORDER FLOW
+
+These are more important than unnecessary extra features.
+
+===============================================================
+78. PHASED IMPLEMENTATION
+===============================================================
+
+Implement in phases.
+
+---------------------------------------------------------------
+PHASE 0 — AUDIT
+---------------------------------------------------------------
+
+Inspect existing code.
+
+Document:
+
+- current routes
+- components
+- database
+- Supabase connection
+- current migration
+- current features
+- missing features
+
+Do not destroy working code.
+
+---------------------------------------------------------------
+PHASE 1 — SUPABASE FOUNDATION
+---------------------------------------------------------------
+
+Verify:
+
+Supabase URL
+Supabase publishable/anon key
+
+Run existing migration.
+
+Verify:
+
+tables
+functions
+policies
+indexes
+
+Fix schema issues.
+
+Test Supabase connection.
+
+---------------------------------------------------------------
+PHASE 2 — AUTH + ROLES
+---------------------------------------------------------------
+
+Complete:
+
+consumer
+farmer
+admin
+
+authentication.
+
+Protected routes.
+
+Role-based access.
+
+RLS.
+
+---------------------------------------------------------------
+PHASE 3 — MARKETPLACE
+---------------------------------------------------------------
+
+Polish:
+
+marketplace
+search
+filters
+product cards
+farm profiles
+product details
+
+Use real Supabase data.
+
+---------------------------------------------------------------
+PHASE 4 — INVENTORY + PREORDERS
+---------------------------------------------------------------
+
+Implement:
+
+inventory
+cart
+preorder
+reservation
+cancellation
+stock release
+
+Test concurrency.
+
+---------------------------------------------------------------
+PHASE 5 — ORDER MANAGEMENT
+---------------------------------------------------------------
+
+Implement:
+
+order state machine
+status history
+farmer order management
+consumer tracking
+Realtime
+
+---------------------------------------------------------------
+PHASE 6 — HARVEST INTELLIGENCE
+---------------------------------------------------------------
+
+Build:
+
+demand forecast
+confidence
+recommendation
+explanation
+harvest plan
+
+This is the PRIMARY HACKATHON FEATURE.
+
+---------------------------------------------------------------
+PHASE 7 — SURPLUS MANAGEMENT
+---------------------------------------------------------------
+
+Build:
+
+surplus detection
+surplus listing
+discount
+bulk purchase
+rescue
+donation tracking
+
+---------------------------------------------------------------
+PHASE 8 — DELIVERY
+---------------------------------------------------------------
+
+Build:
+
+delivery clusters
+distance calculation
+route visualization
+delivery status
+
+---------------------------------------------------------------
+PHASE 9 — TRACEABILITY
+---------------------------------------------------------------
+
+Build:
+
+farm
+harvest
+pack
+pickup
+delivery
+
+timeline.
+
+---------------------------------------------------------------
+PHASE 10 — PAYMENTS
+---------------------------------------------------------------
+
+Integrate Razorpay if credentials are available.
+
+Otherwise:
+
+secure demo payment mode.
+
+---------------------------------------------------------------
+PHASE 11 — ADMIN
+---------------------------------------------------------------
+
+Build:
+
+admin dashboard
+farmer verification
+orders
+demand
+delivery
+surplus
+analytics
+impact
+
+---------------------------------------------------------------
+PHASE 12 — NOTIFICATIONS
+---------------------------------------------------------------
+
+Build:
+
+in-app notifications
+Realtime updates
+
+Optional email/WhatsApp.
+
+---------------------------------------------------------------
+PHASE 13 — PREMIUM UI
+---------------------------------------------------------------
+
+Polish every page.
+
+Focus on:
+
+spacing
+typography
+animations
+responsive behavior
+loading
+empty states
+error states
+visual hierarchy
+
+---------------------------------------------------------------
+PHASE 14 — TELUGU + VOICE
+---------------------------------------------------------------
+
+Add:
+
+English
+Telugu
+
+Voice listing as optional feature.
+
+---------------------------------------------------------------
+PHASE 15 — PWA
+---------------------------------------------------------------
+
+Add:
+
+manifest
+service worker
+installable experience
+offline fallback
+
+---------------------------------------------------------------
+PHASE 16 — SECURITY
+---------------------------------------------------------------
+
+Audit:
+
+RLS
+authorization
+secrets
+input validation
+storage policies
+payment flow
+admin access
+
+---------------------------------------------------------------
+PHASE 17 — PERFORMANCE
+---------------------------------------------------------------
+
+Optimize:
+
+database queries
+indexes
+images
+pagination
+React rendering
+subscriptions
+
+---------------------------------------------------------------
+PHASE 18 — TESTING
+---------------------------------------------------------------
+
+Run:
+
+typecheck
+lint
+unit tests
+integration tests
+build
+
+Test:
+
+consumer
+farmer
+admin
+
+---------------------------------------------------------------
+PHASE 19 — DEMO DATA
+---------------------------------------------------------------
+
+Create realistic fictional data.
+
+---------------------------------------------------------------
+PHASE 20 — HACKATHON POLISH
+---------------------------------------------------------------
+
+Prepare:
+
+demo account
+demo flow
+presentation screens
+impact dashboard
+final landing page
+
+===============================================================
+79. IMPLEMENTATION RULE
+===============================================================
+
+DO NOT try to build all phases blindly in one uncontrolled change.
+
+For each phase:
+
+1. Inspect
+2. Implement
+3. Typecheck
+4. Test
+5. Verify Supabase
+6. Verify RLS
+7. Verify UI
+8. Fix errors
+9. Update PROJECT_STATUS.md
+10. Continue
+
+===============================================================
+80. PROJECT STATUS
+===============================================================
+
+Create:
+
+PROJECT_STATUS.md
+
+Track:
+
+PHASE
+STATUS
+COMPLETED
+IN PROGRESS
+BLOCKED
+TESTED
+NOTES
+
+Also maintain:
+
+ARCHITECTURE.md
+
+DATABASE.md
+
+DEMO_FLOW.md
+
+===============================================================
+81. ENVIRONMENT VARIABLES
+===============================================================
+
+Frontend:
+
+VITE_SUPABASE_URL
+VITE_SUPABASE_ANON_KEY
+
+Server/Edge Functions:
+
+SUPABASE_URL
+SUPABASE_SERVICE_ROLE_KEY
+
+Only use service role in secure server-side environments.
+
+Optional:
+
+RAZORPAY_KEY_ID
+RAZORPAY_KEY_SECRET
+
+MAPPLS_API_KEY
+
+EMAIL_PROVIDER_KEY
+
+AI_PROVIDER_KEY
+
+Never commit secrets.
+
+===============================================================
+82. FALLBACK RULE
+===============================================================
+
+If external integration is unavailable:
+
+DO NOT fake it.
+
+Create a proper abstraction and fallback.
+
+Example:
+
+No Map API:
+
+Use distance calculation and a clean map placeholder.
+
+No Razorpay:
+
+Use clearly labelled Demo Payment.
+
+No AI API:
+
+Use deterministic demand intelligence.
+
+The application must remain functional.
+
+===============================================================
+83. NO FAKE FEATURES
+===============================================================
+
+Never create a button that does nothing.
+
+Never show fake success.
+
+Never show fake payment.
+
+Never show fake AI analysis.
+
+Never claim an API is connected if it is not.
+
+Never hardcode production analytics.
+
+Demo data must be clearly identifiable.
+
+===============================================================
+84. FINAL QUALITY CHECK
+===============================================================
+
+Before completion verify:
+
+[ ] Authentication works
+[ ] Consumer registration works
+[ ] Farmer registration works
+[ ] Admin access works
+[ ] Supabase database works
+[ ] RLS works
+[ ] Marketplace works
+[ ] Product creation works
+[ ] Inventory works
+[ ] Preorders work
+[ ] Reservation works
+[ ] Cancellation releases stock
+[ ] Order lifecycle works
+[ ] Realtime works
+[ ] Demand forecasting works
+[ ] Harvest planning works
+[ ] Surplus detection works
+[ ] Delivery clustering works
+[ ] Traceability works
+[ ] Reviews work
+[ ] Notifications work
+[ ] Admin works
+[ ] Analytics work
+[ ] Impact dashboard works
+[ ] Responsive design works
+[ ] Mobile works
+[ ] TypeScript passes
+[ ] Build passes
+[ ] Critical tests pass
+[ ] No secrets exposed
+[ ] No service-role key in frontend
+[ ] No broken routes
+[ ] No placeholder buttons
+[ ] No raw errors shown to users
+
+===============================================================
+85. FINAL PRODUCT STANDARD
+===============================================================
+
+The final FarmFlow application must feel like:
+
+"A real AgriTech startup product that could launch tomorrow."
+
+It must NOT feel like:
+
+"a college hackathon CRUD application."
+
+The strongest experience should be:
+
+PRE-ORDER
+→ DEMAND INTELLIGENCE
+→ HARVEST PLAN
+→ FARMER
+→ DELIVERY
+→ CONSUMER
+→ IMPACT
+
+===============================================================
+86. FINAL TAGLINE
+===============================================================
+
+Always use:
+
+"Know the demand.
+Plan the harvest.
+Sell fresh.
+Waste less."
+
+===============================================================
+87. FINAL ONE-LINE PITCH
+===============================================================
+
+"FarmFlow is a demand-driven local food marketplace that predicts
+consumer demand before harvest, enables pre-orders, connects
+farmers directly with consumers, coordinates local deliveries,
+and reduces food surplus."
+
+===============================================================
+88. START NOW
+===============================================================
+
+Start by auditing the existing Replit project.
+
+DO NOT immediately rewrite everything.
+
+First report internally:
+
+1. Existing architecture
+2. Existing Supabase integration
+3. Existing tables/migrations
+4. Existing features
+5. Missing features
+6. Current build/test status
+
+Then begin implementation from the earliest incomplete phase.
+
+Preserve existing working functionality.
+
+Use Supabase as the ONLY backend.
+
+Keep the application runnable after every major change.
+
+Build toward the final FarmFlow hackathon product described above.
+===============================================================
+END MASTER PROMPT
+===============================================================
+```
+
+---
+
+# 🔥 How I want you to use this with Replit
+
+Since your project **already has an MVP**, don't paste the prompt and then blindly accept every change.
+
+Use this process:
+
+### STEP 1 — Give Replit the master prompt
+
+Tell it to **audit first**.
+
+It should inspect what it already built.
+
+---
+
+### STEP 2 — Supabase must remain the source of truth
+
+Your architecture is:
+
+```text
+                 FARMFLOW
+                    │
+              ┌─────▼─────┐
+              │   REPLIT  │
+              │ React/TS  │
+              └─────┬─────┘
+                    │
+             Supabase Client
+                    │
+        ┌───────────┼───────────┐
+        ▼           ▼           ▼
+      AUTH       DATABASE     STORAGE
+                    │
+                   RLS
+                    │
+             ┌──────┴──────┐
+             ▼             ▼
+         REALTIME      FUNCTIONS
+                           │
+              ┌────────────┼────────────┐
+              ▼            ▼            ▼
+             AI         RAZORPAY       MAP
+```
+
+**No Replit PostgreSQL.**
+
+---
+
+# 🏆 Most important development order
+
+Even though the master prompt contains 20 phases, your actual hackathon priority should be:
+
+### 🔴 Tier 1 — MUST WORK
+
+```text
+Supabase
+   ↓
+Auth
+   ↓
+Marketplace
+   ↓
+Products
+   ↓
+Inventory
+   ↓
+Pre-orders
+   ↓
+Orders
+   ↓
+Farmer dashboard
+```
+
+### 🟠 Tier 2 — YOUR WINNING DIFFERENTIATOR
+
+```text
+Orders + Preorders
+        ↓
+Demand Intelligence
+        ↓
+Harvest Recommendation
+        ↓
+Surplus Prediction
+```
+
+### 🟡 Tier 3 — MAKES IT LOOK LIKE A REAL STARTUP
+
+```text
+Smart Delivery
+      +
+Traceability
+      +
+Farmer Earnings
+      +
+Admin Analytics
+```
+
+### 🟢 Tier 4 — POLISH
+
+```text
+Telugu
+Voice
+PWA
+Animations
+Advanced AI
+Notifications
+```
+
+---
+
+# 🥇 The one screen I want the judges to remember
+
+Your most important screen should eventually look approximately like this:
+
+```text
+╭────────────────────────────────────────────────────╮
+│  FARMFLOW HARVEST INTELLIGENCE                     │
+│                                                    │
+│  Tomorrow's Harvest                                │
+│                                                    │
+│  🍅 TOMATOES                                       │
+│                                                    │
+│  ┌────────────┐  ┌────────────┐  ┌────────────┐   │
+│  │ DEMAND     │  │ PREORDERS  │  │ CONFIDENCE │   │
+│  │            │  │            │  │            │   │
+│  │ 82 kg      │  │ 61 kg      │  │ 89%        │   │
+│  └────────────┘  └────────────┘  └────────────┘   │
+│                                                    │
+│  RECOMMENDED HARVEST                               │
+│                                                    │
+│              86 KG                                 │
+│                                                    │
+│  ────────────────────────────────────────────────  │
+│                                                    │
+│  WHY THIS RECOMMENDATION?                          │
+│                                                    │
+│  ↑ 18% recent demand                               │
+│  ↑ 11% preorder activity                           │
+│  ↑ Weekend demand                                  │
+│  + 5% planning buffer                              │
+│                                                    │
+│  POTENTIAL SURPLUS                                 │
+│  4 kg                                              │
+│                                                    │
+│  [ ACCEPT HARVEST PLAN ]                           │
+│                                                    │
+╰────────────────────────────────────────────────────╯
+```
+
+When the judge sees this after watching a consumer place an order, the story becomes very clear:
+
+**"I placed an order → the farmer's demand changed → FarmFlow recalculated the harvest → the farmer now knows what to harvest."**
+
+That is the **wow moment**.
+
+---
+
+# 🎯 And your final 30-second explanation
+
+If a judge asks **"What does FarmFlow do?"**, say:
+
+> **"FarmFlow is a demand-driven local food marketplace. Instead of farmers harvesting first and searching for buyers later, consumers can pre-order local produce and FarmFlow analyzes that demand to recommend how much the farmer should harvest. We then connect the farmer directly to the consumer, intelligently group local deliveries, provide farm-to-table traceability, and track surplus reduction."**
+
+Then finish with:
+
+> **"We don't just digitize the marketplace — we synchronize local food supply with local demand."**
+
+That should be the **central story behind the entire UI, backend, AI and demo.**
