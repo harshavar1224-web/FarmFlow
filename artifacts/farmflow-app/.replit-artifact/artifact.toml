@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "FarmFlow"
+description = "A demand-led local food marketplace connecting nearby consumers and farmers, with pre-orders, explainable harvest planning, and transparent local delivery."
+version = "1.0.0"
+id = "artifacts/farmflow-app"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 25619
+
+[services.development]
+run = "pnpm --filter @workspace/farmflow-app run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/farmflow-app", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/farmflow-app/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "25619"
+BASE_PATH = "/"

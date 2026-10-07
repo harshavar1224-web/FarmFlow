@@ -1,0 +1,1 @@
+- [FarmFlow data boundaries](farmflow-data-boundaries.md) — Supabase is the only production backend; demo data and actions must never imply real persistence or success.
