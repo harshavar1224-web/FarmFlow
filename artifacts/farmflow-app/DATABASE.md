@@ -2,10 +2,12 @@
 
 ## Current state
 
-No Supabase client configuration or migration files were present during the
-workspace audit, and no Supabase integration is connected. The generic
-`lib/db` package targets Replit-managed PostgreSQL; FarmFlow must not use it.
-No schema has been created, applied, or verified.
+No Supabase migration files or schema were present in the workspace audit. The
+generic `lib/db` package targets Replit-managed PostgreSQL; FarmFlow must not use
+it. Development Supabase values were later supplied, but read-only inspection
+did not return a schema: the configured URL routes returned 404, and the REST
+API at the project origin rejected the supplied key. No schema has been
+created, applied, or written.
 
 ## Target
 

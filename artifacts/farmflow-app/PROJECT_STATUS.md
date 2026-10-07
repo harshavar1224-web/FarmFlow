@@ -12,8 +12,8 @@ Replit scaffolds and are not used as FarmFlow's backend.
 
 | Phase | Status | Notes |
 | --- | --- | --- |
-| 0 — Audit | Complete | Confirmed the design system exists; no FarmFlow frontend, Supabase configuration, or migrations were found. |
-| 1 — Supabase foundation | Blocked | No Supabase project URL or publishable key is configured. No remote schema or RLS policies can be inspected yet. |
+| 0 — Audit | Complete | Confirmed the design system exists; the original workspace had no FarmFlow frontend, Supabase client, or migrations. |
+| 1 — Supabase foundation | Blocked | Development values were supplied, but the URL includes a path and the key is rejected by the project's REST API. No remote schema or RLS policies were exposed. |
 | 2 — Auth and roles | Blocked | Requires a connected Supabase project and verified schema/policies. |
 | 3 — Marketplace | Demo UI complete | Browse, filter, product/farm detail, and tab-local cart preview are built. Live records and reservations need Supabase. |
 | 4 — Inventory and pre-orders | Blocked | Real inventory reservation must be atomic in Supabase; demo actions must not imply stock was reserved. |
@@ -42,12 +42,12 @@ Replit scaffolds and are not used as FarmFlow's backend.
 - The app served at `/`, `/marketplace`, `/product/:id`, `/farm/:id`, `/cart`,
   and `/farmer/forecast`; desktop previews were checked, along with a mobile
   marketplace view.
-- Browser logs showed no application errors. No Supabase, authentication,
-  reservation, payment, harvest-plan persistence, or database behavior was
-  verified because the project is not configured.
+- Browser logs showed no application errors. Read-only Supabase checks returned
+  404 for the configured API paths and `Invalid API key` at the project origin.
+  No schema could be inspected, and no data or migrations were written.
 
 ## Next unblocker
 
-Configure the Supabase project URL and publishable/anon key through Replit's
-environment-secret flow. Then inspect the remote schema and policies before
-creating or applying any migration.
+Correct the development `VITE_SUPABASE_URL` to the project origin only (no
+trailing path) and provide the matching public anon/publishable key. Then inspect
+the remote schema and policies before creating or applying any migration.

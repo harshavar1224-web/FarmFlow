@@ -7,8 +7,9 @@
   the only visual source of truth.
 - Current preview data: a small in-memory dataset in the app, explicitly
   labeled as demo data. Cart state lives only for the current tab session.
-- Backend: not connected. The app must use Supabase as its only production
-  backend when configured.
+- Backend: Supabase is the only intended production backend. Development
+  connection values are present but have not passed validation; the preview
+  remains demo-only.
 
 ## Required production architecture
 
@@ -38,6 +39,7 @@ FarmFlow's data path. Do not use the Replit-managed database as a fallback.
 
 ## Connection status
 
-No Supabase project is currently connected in this workspace. Do not create or
-run migrations until the target project and its existing schema have been
-inspected.
+The configured URL includes a path segment, which caused API-route 404s. At the
+host origin, the Supabase REST API rejected the supplied key. No remote schema
+was exposed. Do not create or run migrations until the URL/key pair is corrected
+and the target project's existing schema and policies have been inspected.
