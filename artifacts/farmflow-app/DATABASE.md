@@ -4,10 +4,9 @@
 
 No Supabase migration files or schema were present in the workspace audit. The
 generic `lib/db` package targets Replit-managed PostgreSQL; FarmFlow must not use
-it. Development Supabase values were later supplied, but read-only inspection
-did not return a schema: the configured URL routes returned 404, and the REST
-API at the project origin rejected the supplied key. No schema has been
-created, applied, or written.
+it. Development Supabase values were later supplied. After correcting the URL
+to the project origin, read-only inspection still failed because the REST API
+rejected the supplied key. No schema has been created, applied, or written.
 
 ## Target
 

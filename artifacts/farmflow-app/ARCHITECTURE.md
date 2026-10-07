@@ -39,7 +39,7 @@ FarmFlow's data path. Do not use the Replit-managed database as a fallback.
 
 ## Connection status
 
-The configured URL includes a path segment, which caused API-route 404s. At the
-host origin, the Supabase REST API rejected the supplied key. No remote schema
-was exposed. Do not create or run migrations until the URL/key pair is corrected
-and the target project's existing schema and policies have been inspected.
+The development URL has been corrected to the project origin, but the Supabase
+REST API still rejects the supplied public key. No remote schema was exposed.
+Do not create or run migrations until the key matches the project and the
+target project's existing schema and policies have been inspected.

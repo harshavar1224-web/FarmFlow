@@ -13,7 +13,7 @@ Replit scaffolds and are not used as FarmFlow's backend.
 | Phase | Status | Notes |
 | --- | --- | --- |
 | 0 — Audit | Complete | Confirmed the design system exists; the original workspace had no FarmFlow frontend, Supabase client, or migrations. |
-| 1 — Supabase foundation | Blocked | Development values were supplied, but the URL includes a path and the key is rejected by the project's REST API. No remote schema or RLS policies were exposed. |
+| 1 — Supabase foundation | Blocked | The development URL is now the project origin, but the REST API still rejects the supplied public key as invalid. No remote schema or RLS policies were exposed. |
 | 2 — Auth and roles | Blocked | Requires a connected Supabase project and verified schema/policies. |
 | 3 — Marketplace | Demo UI complete | Browse, filter, product/farm detail, and tab-local cart preview are built. Live records and reservations need Supabase. |
 | 4 — Inventory and pre-orders | Blocked | Real inventory reservation must be atomic in Supabase; demo actions must not imply stock was reserved. |
@@ -42,12 +42,13 @@ Replit scaffolds and are not used as FarmFlow's backend.
 - The app served at `/`, `/marketplace`, `/product/:id`, `/farm/:id`, `/cart`,
   and `/farmer/forecast`; desktop previews were checked, along with a mobile
   marketplace view.
-- Browser logs showed no application errors. Read-only Supabase checks returned
-  404 for the configured API paths and `Invalid API key` at the project origin.
-  No schema could be inspected, and no data or migrations were written.
+- Browser logs showed no application errors. The initial URL path caused 404s;
+  after correcting it to the project origin, the REST API still returned
+  `Invalid API key`. No schema could be inspected, and no data or migrations
+  were written.
 
 ## Next unblocker
 
-Correct the development `VITE_SUPABASE_URL` to the project origin only (no
-trailing path) and provide the matching public anon/publishable key. Then inspect
-the remote schema and policies before creating or applying any migration.
+Provide a public anon/publishable key that belongs to the configured project.
+Then inspect the remote schema and policies before creating or applying any
+migration.
